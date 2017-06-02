@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	    <title>Les Animations en JQ !</title>
+	    <style>
+	    	.box { padding : 10px; }
+	    	.carre { position: relative; width: 100px; height: 100px; background: #09f; }
+	    </style>
+	</head>
+	<body>
+
+		<!--
+		Consigne:
+
+		avec l'aide de animate() en jQuery:
+		1 - au clic sur le bouton, déplacer sur la droite le carré de 250px
+		2 - augmenter sa taille de 150px
+		3 - enclencher une alerte à la fin de l'animation
+		-->
+		<div class="box">
+			<p>
+				<button id="play">Lancer</button>
+			</p>
+			<div class="carre"></div>
+		</div>
+
+		<script
+  			src="https://code.jquery.com/jquery-3.2.1.min.js"
+  			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  			crossorigin="anonymous">	
+  		</script>
+
+  		<script>
+			$(function(){
+				$( "#play" ).click(function() {
+				  $( ".carre" ).animate({
+				    left : 250,
+				    height : 150,
+				    width : 150,
+				  }, 500, function(){
+				  	alert("Fin de l'animation");
+				  });
+				});
+			});
+		</script>
+	</body>
+</html>
